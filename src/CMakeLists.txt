@@ -1,7 +1,6 @@
 add_executable(
     opengl
     main.cpp
-    glad.c
 )
 
 set_target_properties(
@@ -13,22 +12,42 @@ set_target_properties(
 target_include_directories(
     opengl
     PUBLIC
-    ../libs/glad/include
-    ${PROJECT_SOURCE_DIR}/external/glfw/include
+        ${PROJECT_SOURCE_DIR}/external/glfw/include
+        ${PROJECT_SOURCE_DIR}/external/glad/include
+
 )
 
-target_link_directories(
-    opengl
-    PUBLIC ${PROJECT_SOURCE_DIR}/build/external/glfw/src
-)
+# target_link_directories(
+#     opengl
+#     PUBLIC 
+#         ${PROJECT_SOURCE_DIR}/build/external/glfw/src
+#         ${PROJECT_SOURCE_DIR}/build/external/glad
+        
+# )
 
 
 target_link_libraries(
     opengl
     PUBLIC
-    glfw3
-    dl      # linux only
-    GL      # linux only
-    X11     # linux only
-    pthread # linux only
+        glfw
+        glad
 )
+
+if(WIN32)
+    target_link_libraries(
+        opengl
+        PUBLIC
+            opengl32
+    )
+endif()
+
+if(UNIX AND NOT APPLE)
+    target_link_libraries(
+        opengl
+        PUBLIC
+            GL  
+            X11 
+            pthread 
+            dl  
+    )
+endif()
