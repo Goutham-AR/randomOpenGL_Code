@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/external/glfw/include"
+                "${workspaceFolder}/external/glfw/include",
+                "${workspaceFolder}/external/glad/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
