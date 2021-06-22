@@ -1,3 +1,3 @@
 #! /usr/bin/sh
 
-cd build ; ./opengl
+cd build ; ./src/opengl
