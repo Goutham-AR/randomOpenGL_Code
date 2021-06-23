@@ -12,6 +12,7 @@ project(
     DESCRIPTION "random opengl programs"
     LANGUAGES C CXX)
 
+add_subdirectory(external/stb_image)
 add_subdirectory(external/glad)
 add_subdirectory(external/glfw)
 add_subdirectory(src)

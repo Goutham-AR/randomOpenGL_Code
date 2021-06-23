@@ -1,6 +1,7 @@
 add_executable(
     opengl
-    main.cpp
+    main.cc
+    shader.hpp
 )
 
 set_target_properties(
@@ -14,6 +15,7 @@ target_include_directories(
     PUBLIC
         ${PROJECT_SOURCE_DIR}/external/glfw/include
         ${PROJECT_SOURCE_DIR}/external/glad/include
+        ${PROJECT_SOURCE_DIR}/external/stb_image/include
 
 )
 
@@ -31,6 +33,7 @@ target_link_libraries(
     PUBLIC
         glfw
         glad
+        stb_image
 )
 
 if(WIN32)
