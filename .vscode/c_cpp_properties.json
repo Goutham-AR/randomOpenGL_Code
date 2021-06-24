@@ -9,7 +9,7 @@
                 "${workspaceFolder}/external/stb_image/include"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
+            // "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
             "intelliSenseMode": "linux-clang-x64"
         }
