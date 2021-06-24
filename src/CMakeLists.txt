@@ -1,8 +1,14 @@
 add_executable(
     opengl
     main.cc
+    window.hpp
+    window.cc
     shader.hpp
+    shader.cc
+    input_handler.hpp
 )
+
+
 
 set_target_properties(
     opengl
@@ -19,13 +25,6 @@ target_include_directories(
 
 )
 
-# target_link_directories(
-#     opengl
-#     PUBLIC 
-#         ${PROJECT_SOURCE_DIR}/build/external/glfw/src
-#         ${PROJECT_SOURCE_DIR}/build/external/glad
-        
-# )
 
 
 target_link_libraries(
